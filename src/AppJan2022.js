@@ -1,10 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Greetings from './Greetings/Greetings';
+import GreetingsArrow from './Greetings/GreetingsArrow';
+import Counter from './Counter/Counter';
 
 function AppJan2022() {
   return (
-  <div>
-    <h1>Test2</h1>
+    <div>
+      {/* <Greetings name="Janek" /> */}
+      <GreetingsArrow name="Staszek" />
+      {/* <Counter /> */}
   </div>
   );
 }
