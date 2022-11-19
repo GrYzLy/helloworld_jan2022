@@ -4,6 +4,7 @@ import GreetingsArrow from './Greetings/GreetingsArrow';
 import Counter from './Counter/Counter';
 import LoginForm from './LoginForm/LoginForm';
 import ConditionalRendering from './ConditionalRendering/ConditionalRendering';
+import Quiz from './Quiz/Quiz';
 
 function AppJan2022() {
   return (
@@ -12,7 +13,8 @@ function AppJan2022() {
       {/* <GreetingsArrow name="Staszek" /> */}
       {/* <Counter /> */}
       {/* <LoginForm /> */}
-      <ConditionalRendering />
+      {/* <ConditionalRendering /> */}
+      <Quiz />
   </div>
   );
 }
