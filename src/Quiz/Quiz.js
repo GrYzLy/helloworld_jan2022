@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PossibleAnswer from './PossibleAnswer';
+import Question from './Question';
 
 class Quiz extends Component {
   constructor(props) {
@@ -7,6 +9,7 @@ class Quiz extends Component {
       playerScore : 0,
       questions: [
         {
+
           question: "What animal barks?",
           possibleAnswers: ["Dog", "Cat"],
           rightAnswer: "Dog",
@@ -43,19 +46,25 @@ class Quiz extends Component {
     const question = this.state.questions[index];
     
     return (
-      <div className='question-display'>
+      <div className='question-display' key={index}>
         <p className='question'>
           {question.question}
         </p>
         <br />
         
-        <button 
-        onClick={() => this.answerQuestion(index, question.possibleAnswers[0])}>
-        {question.possibleAnswers[0]}</button>
-        
-        <button 
-        onClick={() => this.answerQuestion(index, question.possibleAnswers[1])}>
-        {question.possibleAnswers[1]}</button>
+        {/* {question.possibleAnswers.map((answer, answerIndex) => (<button key={answerIndex}
+        onClick={() => this.answerQuestion(index, answer)}>
+        {answer}</button>
+        ))} */}
+
+        {question.possibleAnswers.map((answer, answerIndex) => (
+
+        <PossibleAnswer
+          key={answerIndex} 
+          answerIndex={answerIndex} 
+          answer={answer} 
+          action={() => this.answerQuestion(index, answer)} />))}
+
         <br />
         {this.displayResult(index)}
       </div>
@@ -72,6 +81,7 @@ class Quiz extends Component {
   
   answerQuestion(index, choice)
   {
+    console.log(index + " " + choice)
     const answeredQuestion = this.state.questions[index];
     answeredQuestion.playerChoice = choice;
 
@@ -87,8 +97,17 @@ class Quiz extends Component {
     return (
       <div>
         <h1>Quiz</h1>
-        {this.displayQuestion(0)}
-        {this.displayQuestion(1)}
+        {this.state.questions.map((question, questionIndex) => 
+        (this.displayQuestion(questionIndex)))}
+        
+       
+        {/* {this.state.questions.map((question, questionIndex) => 
+        (<Question 
+            question={question}
+            key={questionIndex} 
+            action={() => this.answerQuestion(questionIndex, answer)} 
+            />))} */}
+
       </div>
     )
   }
