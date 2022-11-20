@@ -5,6 +5,11 @@ import Counter from './Counter/Counter';
 import LoginForm from './LoginForm/LoginForm';
 import ConditionalRendering from './ConditionalRendering/ConditionalRendering';
 import Quiz from './Quiz/Quiz';
+import Lifecycle from './Lifecycle/Lifecycle';
+import Router from './Router/Router';
+import FetchApi from './FetchApi/FetchApi';
+import CounterHooks from './Counter/CounterHooks';
+import FetchApiHook from './FetchApi/FetchApiHook';
 
 function AppJan2022() {
   return (
@@ -14,7 +19,12 @@ function AppJan2022() {
       {/* <Counter /> */}
       {/* <LoginForm /> */}
       {/* <ConditionalRendering /> */}
-      <Quiz />
+      {/* <Quiz /> */}
+      {/* <Lifecycle /> */}
+      {/* <Router /> */}
+      {/* <FetchApi /> */}
+      {/* <CounterHooks /> */}
+      <FetchApiHook />
   </div>
   );
 }
